@@ -1,2 +1,0 @@
-# pachong
-pachong xuexi
