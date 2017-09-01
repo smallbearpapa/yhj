@@ -21,3 +21,6 @@ for parent in soup.a.parents:
         print(parent)
     else:
         print(parent.name)
+print(soup.a.next_sibling)
+print(soup.a.next_sibling.next_sibling)
+print(soup.a.previous_sibling)
