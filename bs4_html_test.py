@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from bs4 import BeautifulSoup
 import requests
+import re
 
 r=requests.get("http://python123.io/ws/demo.html")
 demo=r.text
@@ -24,3 +25,15 @@ for parent in soup.a.parents:
 print(soup.a.next_sibling)
 print(soup.a.next_sibling.next_sibling)
 print(soup.a.previous_sibling)
+
+for link in soup.find_all("a"):
+    print(link.get('href'))
+
+for tag in soup.find_all(re.compile("b")):
+    print(tag.name)
+
+print(soup.find_all("p","course"))
+print(soup.find_all(id="link1"))
+print(soup.find_all(id="link"))
+print(soup.find_all(id=re.compile("link")))
+print(soup.find_all(string="Basic Python"))
